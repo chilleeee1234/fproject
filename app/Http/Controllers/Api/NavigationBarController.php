@@ -51,7 +51,9 @@ class NavigationBarController extends Controller
      */
     public function destroy(string $id)
     {
-        //
+        $navi = NaviBar::findOrfail($id);
+        $navi->delete();
+        return $navi;
     }
 }
 
