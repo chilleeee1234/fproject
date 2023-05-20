@@ -33,7 +33,8 @@ class NavigationBarController extends Controller
      */
     public function show(string $id)
     {
-        //
+        $navi = NaviBar::findOrfail($id);
+        return $navi;
     }
 
 
