@@ -21,4 +21,5 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 
 Route::get('/index', [NavigationBarController::class, 'index']);
 Route::get('/index/{id}', [NavigationBarController::class, 'show']);
+Route::post('/index/', [NavigationBarController::class, 'store']);
 Route::delete('/index/{id}', [NavigationBarController::class, 'destroy']);

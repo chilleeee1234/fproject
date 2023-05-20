@@ -2,9 +2,11 @@
 
 namespace App\Http\Controllers\Api;
 
+use App\Http\Requests\NavibarRequest;
 use App\Models\NaviBar;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
+
 
 class NavigationBarController extends Controller
 {
@@ -23,9 +25,13 @@ class NavigationBarController extends Controller
     /**
      * Store a newly created resource in storage.
      */
-    public function store(Request $request)
+    public function store(NavibarRequest $request)
     {
-        //
+        $validated = $request->validated();
+       
+        $navi = NaviBar::create($validated);
+
+        return $navi;
     }
 
     /**
