@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\Api\NavigationBarController;
+use App\Http\Controllers\Api\UserController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
@@ -24,3 +25,6 @@ Route::get('/index/{id}', [NavigationBarController::class, 'show']);
 Route::post('/index/', [NavigationBarController::class, 'store']);
 Route::put('/index/{id}', [NavigationBarController::class, 'update']);
 Route::delete('/index/{id}', [NavigationBarController::class, 'destroy']);
+
+Route::get('/user', [UserController::class, 'index']);
+Route::delete('/user/{id}', [UserController::class, 'destroy']);
