@@ -47,9 +47,14 @@ class NavigationBarController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, string $id)
+    public function update(NavibarRequest $request, string $id)
     {
-        //
+        $validated = $request->validated();
+       
+        $navi = NaviBar::findOrfail($id) ; 
+        $navi ->update($validated);
+
+            return $navi;
     }
 
     /**
